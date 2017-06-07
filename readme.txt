@@ -9,3 +9,6 @@ F:                    136G  129G  6.8G  96% /f
 G:                    135G  130G  5.6G  96% /g
 H:                    297G  288G  9.8G  97% /h
 J:                    435G  388G   48G  90% /j
+total 2
+-rw-r--r-- 1 Administrator 197121   6 六月  7 17:14 README.md
+-rw-r--r-- 1 Administrator 197121 482 六月  7 17:19 readme.txt
