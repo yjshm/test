@@ -1,3 +1,14 @@
 F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
 0 S  1000  3051  3044  0  80   0 -  1836 wait   pts/5    00:00:00 bash
 0 R  1000  5036  3051  0  80   0 -  1606 -      pts/5    00:00:00 ps
+总用量 616
+drwxrwxr-x 3 liuzhen liuzhen   4096  6月  8 08:00 ./
+drwxrwxrwx 4 liuzhen adm       4096  6月  8 08:00 ../
+-rw-rw-r-- 1 liuzhen liuzhen     70  6月  8 08:00 data.log
+drwxrwxr-x 8 liuzhen liuzhen   4096  6月  8 08:14 .git/
+-rw-rw-r-- 1 liuzhen liuzhen      6  6月  8 08:00 README.md
+-rw-rw-r-- 1 liuzhen liuzhen    619  6月  8 08:00 readme.txt
+-rw-rw-r-- 1 liuzhen liuzhen    210  6月  8 08:08 time.log
+-rw-rw-r-- 1 liuzhen liuzhen 165335  6月  8 08:00 醉美常德.jpg
+-rw-rw-r-- 1 liuzhen liuzhen 224682  6月  8 08:00 醉美常德二级-2.jpg
+-rw-rw-r-- 1 liuzhen liuzhen 205019  6月  8 08:00 醉美常德二级.jpg
