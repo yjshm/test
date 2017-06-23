@@ -5,15 +5,15 @@
 import sys
 import time
 import codecs
-import pdb
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 import requests
 import re
 
-base_URL = 'http://www.baidu.com'
-URL = 'http://www.baidu.com/s?wd='
+base_URL = 'http://www.sogou.com'
+URL = 'https://www.sogou.com/sogou?query=url'
+
 
 class Baidu():
 	session = requests.Session()
@@ -26,6 +26,7 @@ class Baidu():
 		r = self.session.get(url,headers = self.headers)
 		self.curContent = r.content
 	def getHref(self):
+	##得到各个页面的单独地址正则式
 		pattern = re.compile('<div.*?c-container.*? id="(.*?)".*?data-click=.*?href(.*?)target' +\
 			'+.*?>(.*?)</a>',re.S)
 		items = re.findall(pattern,self.curContent)
@@ -35,7 +36,7 @@ class Baidu():
 	def getPageContent(self,webcontent):
 		'''
 		这里已经将所有的关于该页搜索结果中的页码信息都得到
-		可以在这里将其他页码的链接得到
+		可以在这里将其他页码的链接得到  分页键结块
 		'''
 		pattern = re.compile('<div id="page" >(.*?)</div>',re.S)
 		pageContent = re.findall(pattern,webcontent)
@@ -46,7 +47,6 @@ class Baidu():
 		pageContent = self.getPageContent(self.curContent)
 		regx = r'<span class="pc">(\d)</span></strong>'
 		pm = re.search(regx,pageContent)
-		pdb.set_trace()
 		curPage = pm.group(1)
 		return curPage
 	def getHrefByPage(self,page):
