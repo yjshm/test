@@ -11,6 +11,8 @@ ydl_opts = {'proxy':'192.168.1.106:1080'}
 ydl_video_id = sys.argv[1]
 #ydl_video_url = 'https://www.youtube.com/watch?v=' + ydl_video_id
 ydl_video_url = 'https://www.youporn.com/watch/'+ ydl_video_id
+
+
 #with youtube_dl.YoutubeDL(ydl_opts) as ydl:
 with youtube_dl.YoutubeDL() as ydl:
 	video = ydl.extract_info(ydl_video_url, download=False)

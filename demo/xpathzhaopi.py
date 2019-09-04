@@ -1,4 +1,5 @@
 #!endcoding = utf-8  python2.7
+'''
 import  urllib2
 import urllib
 import lxml
@@ -14,5 +15,20 @@ def downloadl(addr,mytype):
     mytree = lxml.etree.HTML(data)
     print(mytree.xpath('//*/div'))
 
-downloadl('https://sou.zhaopin.com/?jl=749&sf=0&st=0&kw=python&kt=3',1 )
-print ('Python', platform.python_version())
+#downloadl('https://sou.zhaopin.com/?jl=749&sf=0&st=0&kw=python&kt=3',1 )
+#print ('Python', platform.python_version())
+'''
+def foo():
+    print("starting...")
+    res = None
+    while True:
+        print("res1:", res)
+        res = yield 4
+        print("res2:",res)
+g = foo()
+print(next(g))
+print("*"*20)
+print(g.send(9))
+print("*"*20)
+print(next(g))
+

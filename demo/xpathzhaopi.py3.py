@@ -26,8 +26,8 @@ def download_html(url, mytype):
     finally:
         return Html
 
-'''
-def save_as_xml(rss, file_name):
+
+def save_as_xml_rss(rss, file_name):
     xml = ''
     try:
         xml = xmltodict.unparse(rss, encoding='utf-8')
@@ -39,7 +39,7 @@ def save_as_xml(rss, file_name):
         with codecs.open(file_name, 'w', 'utf-8') as f:
             f.write(xml)
     return True
-'''
+
 
 
 ''' xml式样
@@ -152,7 +152,7 @@ def anlysis_categorie(url):
     for item in Hrefs:
         item_data = {'title': "",
                      'link': "",
-                     'description': '''&lt;br/&gt; &lt;img border="1" src="{}" /&gt;Length:{}&lt;br/&gt;Keywords:{}''',
+                     'description': '''&lt;br/&gt; &lt;img border="1" src="{}" /&gt;Length: {}&lt;br/&gt;Keywords:{}''',
                      'guid': "",
                      'pubDate': "Sun, 14 Jul 2019 11:00:56 GMT"
                      }
@@ -196,18 +196,18 @@ def down_all_categories():
         item_list = []
         for categorie, src in class2_item.items():
             rss_name = 'youporn_{}_rss.xml'.format(categorie)
-            '''rss_categorie = anlysis_categorie("{}{}".format(YOUPORN_HEAD, src))
+            rss_categorie = anlysis_categorie("{}{}".format(YOUPORN_HEAD, src))
             # data['state'] = state
             # data['rss'] = rss_name
-            if (rss_categorie):e
-                save_as_xml(rss_categorie, rss_name)
-            '''
+            if (rss_categorie):
+                save_as_xml_rss(rss_categorie, rss_name)
+
             categorie_data = {}
             categorie_data['title'] = categorie
             categorie_data['link'] = "{}/{}".format(RELAY_SEVER_HEAD, rss_name)
             item_list.append(categorie_data)
             print(categories_rss)
-            #time.sleep(3)
+            time.sleep(3)
         item_dict = None
         item_dict = build_class('item', 'ItemTitle', item_list)
         class2_dict = build_class('class2',class2,item_dict)
